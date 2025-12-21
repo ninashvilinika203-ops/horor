@@ -39,7 +39,8 @@
 </head>
 <body>
 
-    <div class="hint">დააჭირე ეკრანს...</div>
+    <div class="hint"
+div>
     <img id="monster" src="monster.jpg" alt="Scary image">
     <audio id="scream" src="scream.mp3"></audio>
 
