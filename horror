@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>საშიში საიტი</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        .hint {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            font-family: sans-serif;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hint">დააჭირე ეკრანს...</div>
+    <img id="monster" src="monster.jpg" alt="Scary image">
+    <audio id="scream" src="scream.mp3"></audio>
+
+    <script>
+        document.body.addEventListener("click", () => {
+            const img = document.getElementById("monster");
+            const audio = document.getElementById("scream");
+            const hint = document.querySelector(".hint");
+
+            hint.style.display = "none";
+            img.style.opacity = 1;
+            audio.volume = 1;
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>
